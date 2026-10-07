@@ -110,7 +110,7 @@
             </div>
 
             <!-- Mobile Menu Button -->
-            <button id="mobileMenuBtn" class="md:hidden text-slateTextMuted hover:text-white p-2">
+            <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="md:hidden text-slateTextMuted hover:text-white p-2">
                 <i class="fas fa-bars text-xl"></i>
             </button>
         </div>
@@ -414,25 +414,25 @@
 
                 <!-- Category Filter Buttons -->
                 <div class="flex flex-wrap items-center justify-center gap-2 mb-12">
-                    <button onclick="filterProjects('all')" class="filter-btn active px-4 py-2 rounded-xl text-xs font-bold transition-all bg-indigoAccent text-white">
+                    <button onclick="filterProjects('all', this)" class="filter-btn active px-4 py-2 rounded-xl text-xs font-bold transition-all bg-indigoAccent text-white shadow-md">
                         الكل (12)
                     </button>
-                    <button onclick="filterProjects('health')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slateDark text-slateTextMuted hover:text-white hover:bg-slate-800 border border-slate-800">
+                    <button onclick="filterProjects('health', this)" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slateDark text-slateTextMuted hover:text-white hover:bg-slate-800 border border-slate-800">
                         الصحة والتخسيس الطبي
                     </button>
-                    <button onclick="filterProjects('legal')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slateDark text-slateTextMuted hover:text-white hover:bg-slate-800 border border-slate-800">
+                    <button onclick="filterProjects('legal', this)" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slateDark text-slateTextMuted hover:text-white hover:bg-slate-800 border border-slate-800">
                         الخدمات والقانون
                     </button>
-                    <button onclick="filterProjects('auto')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slateDark text-slateTextMuted hover:text-white hover:bg-slate-800 border border-slate-800">
+                    <button onclick="filterProjects('auto', this)" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slateDark text-slateTextMuted hover:text-white hover:bg-slate-800 border border-slate-800">
                         السيارات والتكنولوجيا
                     </button>
-                    <button onclick="filterProjects('perfume')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slateDark text-slateTextMuted hover:text-white hover:bg-slate-800 border border-slate-800">
+                    <button onclick="filterProjects('perfume', this)" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slateDark text-slateTextMuted hover:text-white hover:bg-slate-800 border border-slate-800">
                         العطور والتجميل
                     </button>
-                    <button onclick="filterProjects('fashion')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slateDark text-slateTextMuted hover:text-white hover:bg-slate-800 border border-slate-800">
+                    <button onclick="filterProjects('fashion', this)" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slateDark text-slateTextMuted hover:text-white hover:bg-slate-800 border border-slate-800">
                         الموضة والهدايا
                     </button>
-                    <button onclick="filterProjects('food-realestate')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slateDark text-slateTextMuted hover:text-white hover:bg-slate-800 border border-slate-800">
+                    <button onclick="filterProjects('food-realestate', this)" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slateDark text-slateTextMuted hover:text-white hover:bg-slate-800 border border-slate-800">
                         المطاعم والعقارات
                     </button>
                 </div>
@@ -475,23 +475,10 @@
                             <i class="fas fa-envelope text-xl"></i>
                             <div class="text-right">
                                 <div class="text-[10px] text-indigo-200">إرسال إيميل</div>
-                                <div class="text-xs sm:text-sm">nouribrahim934@gmail.com</div>
+                                <div class="text-xs sm:text-sm dir-ltr">nouribrahim934@gmail.com</div>
                             </div>
                         </a>
 
-                    </div>
-
-                    <!-- Additional Social / Quick Copy Action -->
-                    <div class="pt-6 border-t border-slate-800 flex flex-wrap items-center justify-center gap-4 text-xs text-slateTextMuted">
-                        <button onclick="copyToClipboard('nouribrahim934@gmail.com', 'تم نسخ البريد الإلكتروني بنجاح!')" class="hover:text-slateTextPrimary transition-colors flex items-center gap-1.5">
-                            <i class="fas fa-copy text-goldAccent"></i>
-                            <span>نسخ البريد الإلكتروني</span>
-                        </button>
-                        <span>•</span>
-                        <button onclick="copyToClipboard('+201278410669', 'تم نسخ رقم الواتساب بنجاح!')" class="hover:text-slateTextPrimary transition-colors flex items-center gap-1.5">
-                            <i class="fas fa-phone text-emerald-400"></i>
-                            <span>نسخ رقم الهاتـف</span>
-                        </button>
                     </div>
 
                 </div>
@@ -501,637 +488,122 @@
     </main>
 
     <!-- Footer -->
-    <footer class="py-8 bg-slate-950 border-t border-slate-800 text-center text-xs text-slateTextMuted">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div>
-                جميع الحقوق محفوظة © 2026 - <span class="text-slateTextPrimary font-bold">نورهان إبراهيم</span> | كاتب محتوى واستراتيجي تسويقي
-            </div>
-            <div class="flex items-center gap-4 text-sm">
-                <a href="mailto:nouribrahim934@gmail.com" class="hover:text-indigoAccent transition-colors"><i class="fas fa-envelope"></i></a>
-                <a href="https://wa.me/201278410669" target="_blank" class="hover:text-emerald-400 transition-colors"><i class="fab fa-whatsapp"></i></a>
-            </div>
+    <footer class="bg-navyBase border-t border-slate-800 py-8 text-center text-xs text-slateTextMuted">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>© 2026 نورهان إبراهيم - جميع الحقوق محفوظة.</p>
         </div>
     </footer>
 
-
-    <!-- 1. IMAGE LIGHTBOX MODAL FOR ZOOMING -->
-    <div id="imageLightbox" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/90 backdrop-blur-md transition-opacity duration-300" onclick="closeLightbox()">
-        <div class="relative max-w-4xl max-h-[90vh] flex flex-col items-center" onclick="event.stopPropagation()">
-            <button onclick="closeLightbox()" class="absolute -top-12 right-0 text-white hover:text-goldAccent text-3xl font-bold transition-colors">
-                <i class="fas fa-xmark"></i>
-            </button>
-            <img id="lightboxImg" src="" alt="تصميم معروض" class="max-w-full max-h-[80vh] rounded-2xl object-contain border border-slate-700 shadow-2xl">
-            <p id="lightboxCaption" class="mt-4 text-sm text-slateTextPrimary font-bold text-center bg-slate-900/80 px-4 py-2 rounded-xl border border-slate-700/60"></p>
-        </div>
-    </div>
-
-    <!-- 2. CUSTOM NOTIFICATION / ACTION NOTICE MODAL -->
-    <div id="noticeModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-        <div class="bg-slateDark border border-slate-700 rounded-3xl p-6 sm:p-8 max-w-md w-full text-center space-y-4 shadow-2xl">
-            <div class="w-12 h-12 rounded-2xl bg-indigoAccent/20 text-indigoAccent flex items-center justify-center text-2xl mx-auto border border-indigoAccent/30">
-                <i id="noticeIcon" class="fas fa-file-pdf"></i>
-            </div>
-            <h3 id="noticeTitle" class="text-lg font-bold text-slateTextPrimary">عنوان التنبيه</h3>
-            <p id="noticeBody" class="text-xs text-slateTextMuted leading-relaxed">تفاصيل التنبيه المباشر...</p>
-            <button onclick="closeCustomNotice()" class="w-full py-3 rounded-xl bg-indigoAccent hover:bg-indigoHover text-white font-bold text-xs transition-colors">
-                حسناً، فهمت
-            </button>
-        </div>
-    </div>
-
-    <!-- 3. INTERACTIVE CASE STUDY MODAL -->
-    <div id="projectModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md transition-opacity duration-300 overflow-y-auto">
-        <div class="relative w-full max-w-4xl my-8 bg-slateDark border border-slate-700 rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
-            
-            <!-- Modal Header -->
-            <div class="p-6 border-b border-slate-800 flex items-center justify-between bg-slate-900/90 shrink-0">
-                <div>
-                    <div class="flex items-center gap-2 mb-1">
-                        <span id="modalCountryBadge" class="px-2.5 py-0.5 rounded-full bg-slate-800 text-[11px] font-bold text-goldAccent border border-slate-700">دولة المشروع</span>
-                        <span id="modalCategory" class="text-xs text-slateTextMuted">تصنيف القطاع</span>
-                    </div>
-                    <h3 id="modalTitle" class="text-xl sm:text-2xl font-black text-slateTextPrimary">عنوان البراند والمشروع</h3>
-                </div>
-                <button onclick="closeProjectModal()" class="w-10 h-10 rounded-xl bg-slate-800 text-slateTextMuted hover:text-white hover:bg-red-500/20 hover:border-red-500/40 border border-slate-700 transition-all flex items-center justify-center text-lg">
-                    <i class="fas fa-xmark"></i>
-                </button>
-            </div>
-
-            <!-- Modal Content Scrollable -->
-            <div class="p-6 sm:p-8 space-y-6 overflow-y-auto text-sm leading-relaxed">
-                
-                <!-- Challenge Box -->
-                <div class="p-5 rounded-2xl bg-slate-900/80 border border-red-500/20 space-y-2">
-                    <h4 class="font-bold text-red-400 flex items-center gap-2 text-base">
-                        <i class="fas fa-triangle-exclamation"></i>
-                        <span>1. التحدي والمشكلة (The Core Challenge):</span>
-                    </h4>
-                    <p id="modalChallenge" class="text-slateTextMuted leading-relaxed">تفاصيل التحدي...</p>
-                </div>
-
-                <!-- Solution & Mindset Box -->
-                <div class="p-5 rounded-2xl bg-slate-900/80 border border-indigoAccent/30 space-y-2">
-                    <h4 class="font-bold text-indigoAccent flex items-center gap-2 text-base">
-                        <i class="fas fa-brain"></i>
-                        <span>2. طريقة تفكيري وحلي الاستراتيجي (Strategy & Mindset):</span>
-                    </h4>
-                    <p id="modalSolution" class="text-slateTextMuted leading-relaxed">تفاصيل طريقة التفكير والحل...</p>
-                </div>
-
-                <!-- Creative Execution Box -->
-                <div class="p-5 rounded-2xl bg-slate-900/80 border border-goldAccent/30 space-y-2">
-                    <h4 class="font-bold text-goldAccent flex items-center gap-2 text-base">
-                        <i class="fas fa-wand-magic-sparkles"></i>
-                        <span>3. التطبيق الإبداعي (Execution):</span>
-                    </h4>
-                    <p id="modalExecution" class="text-slateTextMuted leading-relaxed">تفاصيل التطبيق الإبداعي...</p>
-                </div>
-
-                <!-- 4. VISUAL GALLERY: DESIGNS & POSTS -->
-                <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-700 space-y-3">
-                    <h4 class="font-bold text-slateTextPrimary text-base flex items-center justify-between">
-                        <span class="flex items-center gap-2 text-indigo-400">
-                            <i class="fas fa-images"></i>
-                            <span>4. معرض تصاميم وبوستات المشروع (Designs Gallery)</span>
-                        </span>
-                        <span class="text-xs text-slateTextMuted font-normal">(اضغط على الصورة للتكبير)</span>
-                    </h4>
-                    <div id="modalImagesContainer" class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
-                        <!-- Dynamic Image Thumbnails inserted via JS -->
-                    </div>
-                </div>
-
-                <!-- 5. VISUAL GALLERY: REELS & SHORTS VIDEOS -->
-                <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-700 space-y-3">
-                    <h4 class="font-bold text-slateTextPrimary text-base flex items-center gap-2 text-goldAccent">
-                        <i class="fas fa-film"></i>
-                        <span>5. فيديوهات الـ Reels & Shorts (Video Player)</span>
-                    </h4>
-                    <div id="modalVideosContainer" class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                        <!-- Dynamic Video Players inserted via JS -->
-                    </div>
-                </div>
-
-                <!-- 6. VISUAL GALLERY: CAPTIONS & SALES EMAILS -->
-                <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-700 space-y-3">
-                    <h4 class="font-bold text-slateTextPrimary text-base flex items-center gap-2 text-emerald-400">
-                        <i class="fas fa-quote-right"></i>
-                        <span>6. نماذج الكابشنات والإيميلات البيعية (Captions & Email Copy)</span>
-                    </h4>
-                    <div id="modalCaptionsContainer" class="space-y-3 pt-2">
-                        <!-- Dynamic Caption & Email Cards inserted via JS -->
-                    </div>
-                </div>
-
-                <!-- Interactive Links & Dashboard CTA Section -->
-                <div class="p-6 rounded-2xl bg-gradient-to-r from-indigo-950/60 to-slate-900 border border-indigo-500/40 space-y-4">
-                    <h4 class="font-bold text-slateTextPrimary text-base flex items-center gap-2">
-                        <i class="fas fa-link text-goldAccent"></i>
-                        <span>الملفات والاستراتيجيات ونتائج الحملة (Dashboards):</span>
-                    </h4>
-                    <p class="text-xs text-slateTextMuted">يمكنك الاطلاع مباشرة على ملف الخطة الشاملة ولوحة نتائج الأداء المتاحة للمشروع:</p>
-                    
-                    <div class="flex flex-col sm:flex-row gap-3 pt-2" id="modalButtonsContainer">
-                        <!-- Dynamic Link Buttons inserted via JS -->
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Modal Footer -->
-            <div class="p-4 border-t border-slate-800 bg-slate-900/90 flex justify-end shrink-0">
-                <button onclick="closeProjectModal()" class="px-6 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slateTextPrimary font-bold text-xs transition-colors">
-                    إغلاق النافذة
-                </button>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- JAVASCRIPT LOGIC -->
+    <!-- JavaScript Interactions & Data Rendering -->
     <script>
-        const projectsData = {
-            1: {
-                title: "جوفا فارما (Jouva Pharma)",
-                country: "مصر 🇪🇬",
-                category: "الخدمات الصحية والتخسيس الطبي",
-                filterGroup: "health",
-                challenge: "انتشار أدوية التخسيس المغشوشة ومخاوف العملاء من الآثار الجانبية، بالإضافة لمنافسة شركات الأدوية التقليدية التي تبيع الكبسولة دون تقديم رعاية ومتابعة.",
-                solution: "تموقع البراند كـ 'منظومة علاجية متكاملة' (منتج + دايت علمي + متابعة طبية مجانية)، والتركيز على ألياف قشور السيليوم الطبيعية كبديل آمن لعمليات التكميم الجراحي.",
-                execution: "خطة محتوى شهرية، مقالات SEO طبية، سكريبتات فيديوهات قصيرة Reels، وسلاسل إيميلات تسويقية تحويلية.",
-                strategyLink: "https://drive.google.com",
-                dashboardLink: "https://analytics.google.com",
-                images: [
-                    { url: "https://placehold.co/600x600/1e293b/6366f1?text=بوست+جوفا+فارما+1", caption: "بوست توعوي: بديل التكميم الطبيعي" },
-                    { url: "https://placehold.co/600x600/1e293b/f59e0b?text=إنفوجرافيك+قشور+السيليوم", caption: "إنفوجرافيك: كيف تعمل ألياف السيليوم؟" },
-                    { url: "https://placehold.co/600x600/1e293b/10b981?text=نتيجة+عميل+قبل+وبعد", caption: "قصة نجاح متابعة حالة تخسيس" }
-                ],
-                videos: [
-                    { 
-                        url: "https://www.w3schools.com/html/mov_bbb.mp4", 
-                        poster: "https://placehold.co/400x600/0f172a/6366f1?text=غلاف+ريلز+جوفا", 
-                        title: "سكريبت ريلز: 3 أخطاء تمنع نزول الوزن" 
-                    }
-                ],
-                captions: [
-                    { 
-                        type: "كابشن إنستغرام بيعي", 
-                        title: "زاوية الأمان والحل الطبيعي", 
-                        copy: "بدل ما تخاطر بـ جراحة التكميم... ليه ما تجربش الحل الطبيعي المعتمد من أطباء التغذية؟ 🌿\n\nألياف السيليوم الطبيعية في 'جوفا فارما' بتملى 70% من المعدة وتديك إحساس بالشبع لـ 8 ساعات متواصلة.\n\n✨ احصل على استشارة طبية مجانية مع جدولك الغذائي الآن عند الطلب عبر الواتساب!" 
-                    },
-                    { 
-                        type: "إيميل بيعي تحويلي (Email Copy)", 
-                        title: "رسالة إعادة استهداف العملاء المهتمين", 
-                        copy: "الموضوع: خطتك لإنقاص 5 كيلو هذا الشهر بدون حرمان... 🎯\n\nأهلاً بك،\nنعلم أن أدوية التخسيس التجارية تسبب التعب والقلق. لذلك صممنا لك كورس 'جوفا فارما' المرفق بمتابعة أسبوعية من أطباء متخصصين.\n\nاضغط هنا لحجز استشارتك المجانية اليوم." 
-                    }
-                ]
-            },
-            2: {
-                title: "شفاف للاستشارات القانونية (Shafaf Evolution)",
-                country: "مصر 🇪🇬",
-                category: "الخدمات القانونية والـ LegalTech",
-                filterGroup: "legal",
-                challenge: "غياب الشفافية السعرية في سوق المحاماة التقليدي وتشتت الخدمات القانونية للشركات الناشئة والـ Freelancers.",
-                solution: "تقديم 'شفاف' كأول منصة قانونية رقمية مدعومة بنموذج ذكاء اصطناعي للرد السريع، تحت شعار 'وضوح يحمي أعمالك' واستخدام أدوات الجذب المجانية (Lead Magnets) لبناء القائمة البريدية.",
-                execution: "صياغة الـ Pitch Deck الخاص بالشركة، خطة المحتوى الشاملة، وسلاسل B2B الإيميلية الموجهة لمؤسسي الشركات.",
-                strategyLink: "https://drive.google.com",
-                dashboardLink: "https://analytics.google.com",
-                images: [
-                    { url: "https://placehold.co/600x600/1e293b/6366f1?text=Pitch+Deck+Shafaf", caption: "تصميم الـ Pitch Deck للاستثمار" },
-                    { url: "https://placehold.co/600x600/1e293b/f59e0b?text=بوست+الاستشارات+القانونية", caption: "منشور موجه لمؤسسي الشركات الناشئة" }
-                ],
-                videos: [
-                    { 
-                        url: "https://www.w3schools.com/html/mov_bbb.mp4", 
-                        poster: "https://placehold.co/400x600/0f172a/6366f1?text=فيديو+منصة+شفاف", 
-                        title: "فيديو تعريفي بالخدمات القانونية الرقمية" 
-                    }
-                ],
-                captions: [
-                    { 
-                        type: "منشور LinkedIn B2B", 
-                        title: "استهداف مؤسسي الشركات الناشئة", 
-                        copy: "80% من الشركات الناشئة تقع في أخطاء صياغة العقود في سنتها الأولى! ⚖️\n\nمع منصة 'شفاف'، احصل على مراجعة قانونية فورية لعقود التأسيس والشراكة بوضوح تام وبأسعار محددة مسبقاً بدون مفاجآت.\n\nاحمِ شركتك اليوم وابدأ بطلب نموذج العقد التجريبي." 
-                    }
-                ]
-            },
-            3: {
-                title: "أكسترا أوردنري (Extraordinary)",
-                country: "السعودية 🇸🇦",
-                category: "المجوهرات والفضة المطلية",
-                filterGroup: "fashion",
-                challenge: "خروج العملاء من سوق الذهب بسبب ارتفاع الأسعار وتخوفهم من تغير لون الفضة أو مظهرها مع الوقت.",
-                solution: "التموقع كـ 'بديل فاخر واقتصادي للذهب والألماس' مع التركيز المباشر على الضمان الذهبي مدى الحياة، وتفعيل التفاعل الآلي للخصومات والردود.",
-                execution: "خطة محتوى بصرية وتفاعلية برفيو للقطع الفاخرة وسكريبتات التغليف والإهداء مع تركيز بؤري على التفاصيل.",
-                strategyLink: "https://drive.google.com",
-                dashboardLink: "https://analytics.google.com",
-                images: [
-                    { url: "https://placehold.co/600x600/1e293b/f59e0b?text=عرض+طقم+الفضة+الفاخر", caption: "عرض بصري للقطع الفضية المطلية بالذهب" },
-                    { url: "https://placehold.co/600x600/1e293b/6366f1?text=كرت+الضمان+الذهبي", caption: "إبراز الضمان الذهبي مدى الحياة" }
-                ],
-                videos: [
-                    { 
-                        url: "https://www.w3schools.com/html/mov_bbb.mp4", 
-                        poster: "https://placehold.co/400x600/0f172a/f59e0b?text=ريلز+تغليف+الهدايا", 
-                        title: "ريلز حسّي: تجربة فتح صندوق التغليف (Unboxing)" 
-                    }
-                ],
-                captions: [
-                    { 
-                        type: "كابشن انستغرام وتيك توك", 
-                        title: "مخاطبة الوجاهة والبديل الذكي للذهب", 
-                        copy: "بريق الألماس... بسعر يرضيك! 💎✨\n\nقطع 'Extraordinary' المصنوعة من الفضة الخالصة عيار 925 والمطلية بطبقتين من الذهب. نفس إطلالة الذهب والبريق الفاخر مع ضمان مفتوح ضد تغير اللون.\n\nاطلبي أطقم العيد الآن واكتشفي كود الخصم في الدايركت!" 
-                    }
-                ]
-            },
-            4: {
-                title: "المخزن لقطع غيار السيارات (Al-Makhzan)",
-                country: "السعودية 🇸🇦",
-                category: "تجارة التجزئة لقطع غيار السيارات",
-                filterGroup: "auto",
-                challenge: "ارتفاع أسعار قطع غيار الوكالة وتخوف العميل من شراء قطع تجارية غير مطابقة لسيارته.",
-                solution: "توعية العميل بأن الشركات العالمية تورد للوكالة بنصف السعر، وحل مشكلة المطابقة بطلب 'رقم الهيكل' للشراء الآمن 100%.",
-                execution: "سكريبتات Reels سريعة وتوعوية وكاروسيلات تشخيصية لمشاكل الحرارة وعضلات السيارة والحلول البديلة.",
-                strategyLink: "https://drive.google.com",
-                dashboardLink: "https://analytics.google.com",
-                images: [
-                    { url: "https://placehold.co/600x600/1e293b/6366f1?text=كاروسيل+رقم+الهيكل", caption: "دليل الشراء برقم الهيكل للسيارة" }
-                ],
-                videos: [
-                    { 
-                        url: "https://www.w3schools.com/html/mov_bbb.mp4", 
-                        poster: "https://placehold.co/400x600/0f172a/6366f1?text=فيديو+مقارنة+القطع", 
-                        title: "ريلز توعوي: الفرق بين قطعة الوكالة والبديل المعتمد" 
-                    }
-                ],
-                captions: [
-                    { 
-                        type: "سكريبت فيديو قصير", 
-                        title: "Hook سريع لملاك السيارات", 
-                        copy: "ليه تشتري نفس القطعة بضعف السعر من الوكالة؟ 🚗⚠️\n\nفي 'المخزن'، بنوفر لك القطع الأصلية من المصنع مباشرة مع ضمان المطابقة برقم الهيكل (VIN).\n\nأرسل رقم هيكل سيارتك بالواتساب وتوصلك تسعيرة فورية!" 
-                    }
-                ]
-            },
-            5: {
-                title: "عيادات كوديرما للتجميل والجلدية (Coderma)",
-                country: "السعودية 🇸🇦",
-                category: "الجلدية والتجميل الطبي",
-                filterGroup: "health",
-                challenge: "خوف العميلات من الفيلر والتجميل المبالغ فيه وتشتت المعرفة بأسباب الهالات السوداء وأنواعها.",
-                solution: "بناء الثقة عبر محتوى 'لماذا نقول لا للفيلر؟' لتأكيد التوازن الطبي، وتقسيم الهالات في منشورات توعوية، وإطلاق باقات نضارة العيد.",
-                execution: "منشورات توعوية وبيعية وباقات موسمية مع توجيه بصري راقٍ وملتزم بالمعايير.",
-                strategyLink: "https://drive.google.com",
-                dashboardLink: "https://analytics.google.com",
-                images: [
-                    { url: "https://placehold.co/600x600/1e293b/f59e0b?text=باقات+نضارة+العيد", caption: "العرض المباشر لباقات نضارة البشرة" }
-                ],
-                videos: [
-                    { 
-                        url: "https://www.w3schools.com/html/mov_bbb.mp4", 
-                        poster: "https://placehold.co/400x600/0f172a/ec4899?text=ريلز+نصائح+الجلدية", 
-                        title: "ريلز توعوي: أنواع الهالات والعلاج المناسب لكل نوع" 
-                    }
-                ],
-                captions: [
-                    { 
-                        type: "منشور توعوي وطبي", 
-                        title: "تصحيح المفاهيم الشائعة عن الفيلر", 
-                        copy: "جمالك الطبيعي هو الأصل! ✨\nفي عيادات 'كوديرما'، نعتمد مبدأ التجميل المتوازن الذي يبرز ملامحك بدون مبالغة.\n\nاستشيري طبيباتنا اليوم لتحديد جلسة النضارة الأنسب لبشرتك." 
-                    }
-                ]
-            },
-            6: {
-                title: "عيادات سنان لطب الأسنان (Snan Dental)",
-                country: "السعودية 🇸🇦",
-                category: "الرعاية الطبية وطب وجراحة الأسنان",
-                filterGroup: "health",
-                challenge: "الانطباع السائد بأن الفينير يبدو غير طبيعي والتخوف من التسرع في عمليات الزراعة الفورية.",
-                solution: "صياغة محتوى موثوق يوضح فسيولوجية طبقة المينا الطبيعية، والتأكيد على تقييم العظام الدقيق قبل الزراعة.",
-                execution: "منشورات طبية تفاعلية تعزز التموقع الطبي الفاخر وتجيب عن تساؤلات المريض بوضوح.",
-                strategyLink: "https://drive.google.com",
-                dashboardLink: null,
-                images: [
-                    { url: "https://placehold.co/600x600/1e293b/10b981?text=ابتسامة+سنان+الطبيعية", caption: "عرض حالات الفينير الطبيعي" }
-                ],
-                videos: [],
-                captions: [
-                    { type: "كابشن توعوي", title: "الزراعة الفورية للأسنان", copy: "الابتسامة الواثقة تبدأ من التخطيط الطبي السليم. احجز كشفك الآن برعاية أطباء استشاريين." }
-                ]
-            },
-            7: {
-                title: "مسباحك (Mespahk)",
-                country: "السعودية 🇸🇦",
-                category: "المستلزمات الرجالية والهدايا النخبوية",
-                filterGroup: "fashion",
-                challenge: "صعوبة إقناع العميل بشراء مسابح العمبر والزعفران أونلاين دون لمس الخامة والتأكد من جودتها.",
-                solution: "اعتماد كتابة المحتوى الحسي (Sensory Copywriting) مثل 'سبحة معطرة تعطر يدك'، مع الربط بالوجاهة والهيبة.",
-                execution: "منشورات تحويلية تركز على التفاصيل والـ FOMO للألوان النادرة والمجموعات المحدودة.",
-                strategyLink: "https://drive.google.com",
-                dashboardLink: "https://analytics.google.com",
-                images: [
-                    { url: "https://placehold.co/600x600/1e293b/f59e0b?text=سبحة+الزعفران+الفاخرة", caption: "تصميم المجمّع الحسي لمسابح الزعفران" }
-                ],
-                videos: [],
-                captions: [
-                    { type: "Sensory Copywriting", title: "رائحة الزعفران والوجاهة", copy: "رائحة تعطر يدك مع كل تسبيحة... خامة الزعفران النادرة بين يديك الآن." }
-                ]
-            },
-            8: {
-                title: "وجاهة للعطور (Wajaha Perfumes)",
-                country: "السعودية 🇸🇦",
-                category: "العطور والجمال",
-                filterGroup: "perfume",
-                challenge: "منافسة سوق العطور المستوحاة وتخوف العملاء من مدى ثبات العطر وجودة الزيوت.",
-                solution: "التأكيد المباشر على استخدام زيوت فرنسية مركزة، وإبراز المقارنة الذكية بالسعر مع العطور العالمية الفاخرة.",
-                execution: "توجيه بصري دقيق يظهر هيبة الرجل وعصرية العطر النسائي بأسلوب جذاب وراقي.",
-                strategyLink: "https://drive.google.com",
-                dashboardLink: null,
-                images: [
-                    { url: "https://placehold.co/600x600/1e293b/6366f1?text=مجموعة+عطور+وجاهة", caption: "العطور المستوحاة بزيوت فرنسية" }
-                ],
-                videos: [],
-                captions: [
-                    { type: "كابشن تسويقي", title: "الثبات والتركيز العالي", copy: "ثبات يدوم طويلاً وتركيز عالي يصل لـ 30%. جرب العطر واستمتع بالفخامة." }
-                ]
-            },
-            9: {
-                title: "دالين الورد (Dalin Al-Ward - الحملات الشاملة)",
-                country: "السعودية 🇸🇦",
-                category: "الزهور والحلول الموسمية للإهداء",
-                filterGroup: "fashion",
-                challenge: "شدة المنافسة وتكرار المحتوى في مواسم الهدايا الكبرى (رمضان، العيد، والمواليد).",
-                solution: "ابتكار حزم منتجات هدايا متكاملة ترفع حيرة الاختيار عن العميل (مثل طقم سكون رمضان، بوكسات المواليد، وتوزيعات العيد).",
-                execution: "إدارة الحملات الموسمية الشاملة وجدولة المحتوى البصري والسكريبتات البيعية.",
-                strategyLink: "https://drive.google.com",
-                dashboardLink: "https://analytics.google.com",
-                images: [
-                    { url: "https://placehold.co/600x600/1e293b/ec4899?text=بوكس+سكون+رمضان", caption: "حزمة هدايا سكون رمضان" }
-                ],
-                videos: [],
-                captions: [
-                    { type: "حملة موسمية", title: "توزيعات العيد والمواليد", copy: "اجعل مناسباتك لا تُنسى مع تنسيقات دالين الورد المبتكرة." }
-                ]
-            },
-            10: {
-                title: "القمة الشرقية العقارية (Al-Qamma Al-Sharqia)",
-                country: "السعودية 🇸🇦",
-                category: "العقارات والتطوير السكني",
-                filterGroup: "food-realestate",
-                challenge: "تخوف المشترين من الرسوم الخفية وعدم وضوح التراخيص الرسمية للمشاريع.",
-                solution: "بناء الأمان النفسي عبر إبراز تراخيص VAL وشراكات سكني في التصاميم، مع التأكيد على أن السعر المعلن نهائي.",
-                execution: "محتوى بيعي وتوعوي يعزز الشفافية والمصداقية ويتناول نصائح التملك العقاري الذكي.",
-                strategyLink: "https://drive.google.com",
-                dashboardLink: null,
-                images: [
-                    { url: "https://placehold.co/600x600/1e293b/6366f1?text=مشروع+سكني+القمة", caption: "عرض المخطط السكني والتراخيص" }
-                ],
-                videos: [],
-                captions: [
-                    { type: "محتوى عقاري", title: "الشفافية والتراخيص", copy: "امتلك منزل أحلامك بتراخيص معتمدة وبدون أي مصاريف إضافية خفية." }
-                ]
-            },
-            11: {
-                title: "غمار لاين / عمار لاين (Ghamar Line)",
-                country: "السعودية 🇸🇦",
-                category: "الأزياء والموضة (العبايات)",
-                filterGroup: "fashion",
-                challenge: "شدة الازدهار والتكرار في سوق العبايات، ومعاناة العميلة من العبايات غير العملية.",
-                solution: "طرح مفهوم 'العباية العملية المريحة' للأناقة اليومية، مع توجيه داتا الصور بالذكاء الاصطناعي لظهور الموديل بشكل محجب يناسب الهوية.",
-                execution: "نصوص تسويقية تركز على 'أناقة بدون مجهود' وتصاميم مريحة لجميع الأوقات.",
-                strategyLink: "https://drive.google.com",
-                dashboardLink: null,
-                images: [
-                    { url: "https://placehold.co/600x600/1e293b/f59e0b?text=تصميم+عباية+غمار+لاين", caption: "عرض العباية العملية اليومية" }
-                ],
-                videos: [],
-                captions: [
-                    { type: "كابشن موضة", title: "أناقة بدون مجهود", copy: "راحة طوال اليوم وإطلالة راقية تلائم جميع خروجاتك." }
-                ]
-            },
-            12: {
-                title: "كشري الشيخ (Koshary El-Sheikh)",
-                country: "مصر 🇪🇬",
-                category: "الأغذية والمطاعم (F&B)",
-                filterGroup: "food-realestate",
-                challenge: "المنافسة الشديدة وحاجة البراند لمخاطبة المواقف اليومية للعميل دون ملل.",
-                solution: "مخاطبة ضيق الوقت في استراحة العمل وكسل الأم عن الطبيخ، والتركيز على وجبات اللمة والشبع الاقتصادي.",
-                execution: "محتوى فكاهي وجماهيري خفيف مع صور مشهية وسكريبتات تفاعلية.",
-                strategyLink: "https://drive.google.com",
-                dashboardLink: null,
-                images: [
-                    { url: "https://placehold.co/600x600/1e293b/ef4444?text=علبة+كشري+الشيخ", caption: "منشور تفاعلي لجلسة الغداء" }
-                ],
-                videos: [],
-                captions: [
-                    { type: "محتوى تفاعلي", title: "وجبة استراحة العمل", copy: "ساعة الاستراحة قربت؟ اطلب طاجن كشري الشيخ واشحن طاقتك بوجبة شبعانة!" }
-                ]
-            }
-        };
-
-        function renderProjectsGrid(filter = 'all') {
-            const container = document.getElementById('projectsGrid');
-            container.innerHTML = '';
-
-            Object.keys(projectsData).forEach(id => {
-                const project = projectsData[id];
-                
-                if (filter !== 'all' && project.filterGroup !== filter) {
-                    return;
-                }
-
-                const card = document.createElement('div');
-                card.className = "p-6 rounded-3xl bg-slateDark border border-slate-800 hover:border-indigoAccent/60 transition-all duration-300 flex flex-col justify-between group shadow-xl hover:-translate-y-1";
-                card.innerHTML = `
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-                            <span class="px-2.5 py-1 rounded-full bg-slate-900 text-goldAccent text-[11px] font-bold border border-slate-700">${project.country}</span>
-                            <span class="text-xs text-indigo-400 font-semibold">${project.category}</span>
-                        </div>
-
-                        <h3 class="text-xl font-bold text-slateTextPrimary group-hover:text-indigoAccent transition-colors">${project.title}</h3>
-
-                        <div class="space-y-2 text-xs">
-                            <p class="text-slateTextMuted line-clamp-2">
-                                <strong class="text-red-400">التحدي:</strong> ${project.challenge}
-                            </p>
-                            <p class="text-slateTextMuted line-clamp-2">
-                                <strong class="text-indigoAccent">الحل:</strong> ${project.solution}
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="pt-6 border-t border-slate-800/80 mt-6 flex items-center justify-between">
-                        <button onclick="openProjectModal(${id})" class="w-full py-3 rounded-xl bg-slate-900 group-hover:bg-indigoAccent text-slateTextPrimary group-hover:text-white font-bold text-xs transition-all flex items-center justify-center gap-2 border border-slate-700/80 group-hover:border-indigoAccent">
-                            <span>عرض دراسة الحالة والمعرض التفاعلي</span>
-                            <i class="fas fa-arrow-left"></i>
-                        </button>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-        }
-
-        function filterProjects(group) {
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active', 'bg-indigoAccent', 'text-white');
-                btn.classList.add('bg-slateDark', 'text-slateTextMuted');
-            });
-            event.currentTarget.classList.add('active', 'bg-indigoAccent', 'text-white');
-            event.currentTarget.classList.remove('bg-slateDark', 'text-slateTextMuted');
-            
-            renderProjectsGrid(group);
-        }
-
-        const projectModal = document.getElementById('projectModal');
-
-        function openProjectModal(id) {
-            const data = projectsData[id];
-            if (!data) return;
-
-            document.getElementById('modalTitle').innerText = data.title;
-            document.getElementById('modalCountryBadge').innerText = data.country;
-            document.getElementById('modalCategory').innerText = data.category;
-            document.getElementById('modalChallenge').innerText = data.challenge;
-            document.getElementById('modalSolution').innerText = data.solution;
-            document.getElementById('modalExecution').innerText = data.execution;
-
-            // Populate Images Grid
-            const imagesContainer = document.getElementById('modalImagesContainer');
-            imagesContainer.innerHTML = '';
-            if (data.images && data.images.length > 0) {
-                data.images.forEach(img => {
-                    const imgCard = document.createElement('div');
-                    imgCard.className = "group relative rounded-xl overflow-hidden bg-slate-800 border border-slate-700/60 cursor-pointer aspect-square hover:border-indigoAccent transition-all";
-                    imgCard.onclick = () => openLightbox(img.url, img.caption);
-                    imgCard.innerHTML = `
-                        <img src="${img.url}" alt="${img.caption}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-2 flex flex-col justify-end text-[11px] text-slateTextPrimary font-medium">
-                            <span class="truncate"><i class="fas fa-magnifying-glass-plus me-1 text-goldAccent"></i> ${img.caption}</span>
-                        </div>
-                    `;
-                    imagesContainer.appendChild(imgCard);
-                });
-            } else {
-                imagesContainer.innerHTML = `<p class="text-xs text-slateTextMuted col-span-full py-2">لا تتوفر صور إضافية لهذا المشروع حالياً.</p>`;
-            }
-
-            // Populate Videos Showcase
-            const videosContainer = document.getElementById('modalVideosContainer');
-            videosContainer.innerHTML = '';
-            if (data.videos && data.videos.length > 0) {
-                data.videos.forEach(vid => {
-                    const vidCard = document.createElement('div');
-                    vidCard.className = "p-3 rounded-xl bg-slate-800/80 border border-slate-700 space-y-2";
-                    vidCard.innerHTML = `
-                        <div class="text-xs font-bold text-slateTextPrimary flex items-center gap-1.5">
-                            <i class="fas fa-circle-play text-indigoAccent"></i>
-                            <span>${vid.title}</span>
-                        </div>
-                        <div class="relative rounded-lg overflow-hidden bg-black aspect-[9/16] max-h-64 mx-auto flex items-center justify-center">
-                            <video controls poster="${vid.poster}" class="w-full h-full object-contain">
-                                <source src="${vid.url}" type="video/mp4">
-                                المتصفح لا يدعم تشغيل الفيديو.
-                            </video>
-                        </div>
-                    `;
-                    videosContainer.appendChild(vidCard);
-                });
-            } else {
-                videosContainer.innerHTML = `<p class="text-xs text-slateTextMuted col-span-full py-2">لا تتوفر فيديوهات مسجلة لهذا المشروع حالياً.</p>`;
-            }
-
-            // Populate Captions & Sales Emails
-            const captionsContainer = document.getElementById('modalCaptionsContainer');
-            captionsContainer.innerHTML = '';
-            if (data.captions && data.captions.length > 0) {
-                data.captions.forEach(cap => {
-                    const capCard = document.createElement('div');
-                    capCard.className = "p-4 rounded-xl bg-slate-800/60 border border-slate-700/80 space-y-2";
-                    capCard.innerHTML = `
-                        <div class="flex items-center justify-between text-xs border-b border-slate-700/50 pb-2">
-                            <span class="px-2.5 py-0.5 rounded-full bg-indigo-500/10 text-indigo-400 font-bold border border-indigo-500/20">${cap.type}</span>
-                            <span class="font-bold text-goldAccent">${cap.title}</span>
-                        </div>
-                        <p class="text-xs text-slateTextMuted leading-relaxed whitespace-pre-line font-mono bg-slate-900/60 p-3 rounded-lg border border-slate-800">${cap.copy}</p>
-                    `;
-                    captionsContainer.appendChild(capCard);
-                });
-            } else {
-                captionsContainer.innerHTML = `<p class="text-xs text-slateTextMuted py-2">لا تتوفر نماذج نصية إضافية لهذا المشروع.</p>`;
-            }
-
-            // Generate Action Link Buttons
-            const buttonsContainer = document.getElementById('modalButtonsContainer');
-            buttonsContainer.innerHTML = '';
-
-            if (data.strategyLink) {
-                const stratBtn = document.createElement('button');
-                stratBtn.type = "button";
-                stratBtn.onclick = () => showCustomNotice('ملف الاستراتيجية', 'يمكنك استبدال هذا التنبيه بالرابط المباشر لملف PDF أو Drive الخاص باستراتيجية مشروع ' + data.title);
-                stratBtn.className = "px-5 py-3 rounded-xl bg-indigoAccent hover:bg-indigoHover text-white font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 shadow-lg";
-                stratBtn.innerHTML = `<i class="fas fa-file-pdf"></i> <span>📄 اضغط هنا للاطلاع على ملف الاستراتيجية الشاملة</span>`;
-                buttonsContainer.appendChild(stratBtn);
-            }
-
-            if (data.dashboardLink) {
-                const dashBtn = document.createElement('button');
-                dashBtn.type = "button";
-                dashBtn.onclick = () => showCustomNotice('لوحة النتائج الإحصائية', 'يمكنك ربط هذا الزر برابط Dashboard المباشر أو نتائج أداء حملة ' + data.title);
-                dashBtn.className = "px-5 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 shadow-lg";
-                dashBtn.innerHTML = `<i class="fas fa-chart-pie"></i> <span>📊 اضغط هنا لعرض نتائج الحملة والـ Dashboard</span>`;
-                buttonsContainer.appendChild(dashBtn);
-            }
-
-            projectModal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeProjectModal() {
-            projectModal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        function openLightbox(url, caption) {
-            document.getElementById('lightboxImg').src = url;
-            document.getElementById('lightboxCaption').innerText = caption || '';
-            document.getElementById('imageLightbox').classList.remove('hidden');
-        }
-
-        function closeLightbox() {
-            document.getElementById('imageLightbox').classList.add('hidden');
-        }
-
-        function showCustomNotice(title, body) {
-            document.getElementById('noticeTitle').innerText = title;
-            document.getElementById('noticeBody').innerText = body;
-            document.getElementById('noticeModal').classList.remove('hidden');
-        }
-
-        function closeCustomNotice() {
-            document.getElementById('noticeModal').classList.add('hidden');
-        }
-
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
             menu.classList.toggle('hidden');
         }
 
-        function copyToClipboard(text, successMessage) {
-            const tempInput = document.createElement('textarea');
-            tempInput.value = text;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempInput);
+        // Projects Data Array
+        const projectsData = [
+            {
+                id: 1,
+                title: "دراسة حالة Gova Pharma",
+                category: "health",
+                tag: "الصحة والتخسيس الطبي",
+                desc: "استراتيجية محتوى متكاملة وتسويق بيعي لمنتجات التخسيس والتغذية العلاجية بالسوق المصري.",
+                metrics: "زيادة التفاعل بنسبة 140%"
+            },
+            {
+                id: 2,
+                title: "مكتب شفاف للاستشارات",
+                category: "legal",
+                tag: "الخدمات والقانون",
+                desc: "صياغة خطط استراتيجية وتسويق B2B وإيميلات بيعية لاستهداف الشركات بالسعودية ومصر.",
+                metrics: "تحسين جودة Leads بنسبة 85%"
+            },
+            {
+                id: 3,
+                title: "سلسلة محتوى كشري الشيخ",
+                category: "food-realestate",
+                tag: "المطاعم والأغذية",
+                desc: "حملات إعلانية وسكريبتات فيديوهات قصيرة تعزز الارتباط العاطفي والولاء للبراند.",
+                metrics: "أكثر من 500 ألف مشاهدة"
+            },
+            {
+                id: 4,
+                title: "براند عطور وسابح فخمة",
+                category: "perfume",
+                tag: "العطور والتجميل",
+                desc: "صياغة وصف منتجات فاخرة وسكريبتات تسويقية للكهرمان والزعفران المستهدف للخليج.",
+                metrics: "مبيعات مباشرة عبر المتجر"
+            },
+            {
+                id: 5,
+                title: "تطبيق خدمات السيارات",
+                category: "auto",
+                tag: "السيارات والتكنولوجيا",
+                desc: "إعادة هيكلة الرسائل التسويقية وصياغة منشورات توعوية لزيادة تحميل التطبيق.",
+                metrics: "ارتفاع نسبة التنزيل 60%"
+            },
+            {
+                id: 6,
+                title: "براند موضة وهدايا راقية",
+                category: "fashion",
+                tag: "الموضة والهدايا",
+                desc: "استراتيجية محتوى للمواسم والأعياد مع إرشادات بصريّة خاصة للفرق الإبداعية.",
+                metrics: "نمو المبيعات الموسمية"
+            }
+        ];
 
-            showCustomNotice('تم النسخ بنجاح', successMessage);
+        function renderProjects(data) {
+            const container = document.getElementById('projectsGrid');
+            container.innerHTML = '';
+
+            data.forEach(p => {
+                const cardHtml = `
+                    <div class="p-6 rounded-3xl bg-slateDark border border-slate-800 hover:border-indigoAccent/50 transition-all duration-300 flex flex-col justify-between shadow-xl group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-[11px] font-bold border border-indigo-500/20">${p.tag}</span>
+                                <i class="fas fa-arrow-up-left-from-circle text-slateTextMuted group-hover:text-indigoAccent transition-colors"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slateTextPrimary group-hover:text-indigoAccent transition-colors">${p.title}</h3>
+                            <p class="text-xs text-slateTextMuted leading-relaxed">${p.desc}</p>
+                        </div>
+                        <div class="pt-6 border-t border-slate-800/80 mt-6 flex items-center justify-between text-xs">
+                            <span class="text-goldAccent font-bold"><i class="fas fa-chart-line me-1"></i> ${p.metrics}</span>
+                            <span class="text-indigo-400 font-semibold group-hover:underline">التفاصيل الكاملة</span>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += cardHtml;
+            });
         }
 
-        // Initialize projects grid on window load
-        window.onload = function() {
-            renderProjectsGrid('all');
-            document.getElementById('mobileMenuBtn').addEventListener('click', toggleMobileMenu);
-        };
+        function filterProjects(cat, btn) {
+            // Update Active Class on Filter Buttons
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(b => {
+                b.classList.remove('bg-indigoAccent', 'text-white', 'shadow-md');
+                b.classList.add('bg-slateDark', 'text-slateTextMuted');
+            });
+
+            if (btn) {
+                btn.classList.remove('bg-slateDark', 'text-slateTextMuted');
+                btn.classList.add('bg-indigoAccent', 'text-white', 'shadow-md');
+            }
+
+            // Filter Data
+            if (cat === 'all') {
+                renderProjects(projectsData);
+            } else {
+                const filtered = projectsData.filter(item => item.category === cat);
+                renderProjects(filtered);
+            }
+        }
+
+        // Initial Load
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProjects(projectsData);
+        });
     </script>
 </body>
 </html>
